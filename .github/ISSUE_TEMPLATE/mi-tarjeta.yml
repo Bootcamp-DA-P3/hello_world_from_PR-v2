@@ -2,22 +2,10 @@ name: "🃏 Mi tarjeta"
 description: "Reserva la tarjeta que vas a escribir."
 title: "Tarjeta: "
 body:
-  - type: dropdown
-    id: equipo
-    attributes:
-      label: "Equipo"
-      options:
-        - "1 · Origen y Captura"
-        - "2 · Limpieza y Transformación"
-        - "3 · Análisis y Modelado"
-        - "4 · Despliegue y Monitorización"
-        - "5 · Impacto y Dirección Estratégica"
-    validations:
-      required: true
   - type: input
-    id: tema
+    id: tarjeta
     attributes:
-      label: "Número y tema de la tarjeta"
-      placeholder: "TARJETA 2: Recolección e ingestión"
+      label: "Equipo y número de tarjeta"
+      placeholder: "Equipo 1 · TARJETA 2: Recolección e ingestión"
     validations:
       required: true
