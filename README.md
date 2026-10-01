@@ -1,7 +1,7 @@
 # 🌐 Los 5 Pilares del Ciclo de Vida del Dato
 
-Práctica de colaboración en GitHub: cada alumno/a escribe **una tarjeta** de la web siguiendo el ciclo completo
-**issue → rama → commit → pull request → review → merge**, organizado en el **Project** del repo.
+Práctica de colaboración en GitHub: cada equipo construye una página de la web y cada alumno/a escribe **una tarjeta**,
+siguiendo el ciclo **issue → rama → commit → pull request → review → merge**, organizado en el **Project** del repo.
 
 Duración aproximada: 45–60 min.
 
@@ -9,7 +9,7 @@ Duración aproximada: 45–60 min.
 
 ## 🃏 Tarjetas
 
-Cada equipo tiene una página con 4 tarjetas ya preparadas. Cada persona elige **una** (si sois más de 4, trabajad en pareja) y copia el texto en su bloque `TARJETA N`. Despliega tu equipo para ver el contenido:
+Cada equipo tiene una página con 4 tarjetas ya preparadas. Cada persona elige **una** (si sois más de 4, trabajad en pareja) y será su **subtarea**. Despliega tu equipo para ver el contenido:
 
 <details>
 <summary><b>Equipo 1 · Origen y Captura</b> · <code>data-origin/data-origin.html</code></summary>
@@ -121,93 +121,138 @@ Mira `examples/examples.html` para ver cómo queda una tarjeta terminada.
 
 ---
 
-## 🧭 Pasos
+## 🧭 Cómo se trabaja
 
-### 1. Clona el repo
+```mermaid
+gitGraph
+  commit id: "main"
+  branch feature/equipo-1-origen
+  checkout feature/equipo-1-origen
+  branch feature/tarjeta-1-fuentes
+  commit id: "Tarjeta 1"
+  checkout feature/equipo-1-origen
+  branch feature/tarjeta-2-ingestion
+  commit id: "Tarjeta 2"
+  checkout feature/equipo-1-origen
+  merge feature/tarjeta-1-fuentes id: "PR tarjeta 1"
+  merge feature/tarjeta-2-ingestion id: "PR tarjeta 2"
+  checkout main
+  merge feature/equipo-1-origen id: "PR equipo 1"
+```
+
+- **Tarea general** (un issue por equipo, ej. *Origen y Captura*) → su rama es el `develop` del equipo.
+- **Subtareas** (un sub-issue por tarjeta, ej. *Recolección e ingestión*) → cada una con su rama, que sale de la rama del equipo.
+- Las tarjetas se mergean en la rama del equipo y, cuando todo funciona, el equipo abre **un PR a `main`**.
+- Todo se hace **desde el Project**: al pulsar un issue del tablero se abre en un panel lateral con todas las opciones.
+
+### 🏷️ Nombres de las ramas
+
+Todas las ramas empiezan por `feature/`, en minúsculas y **sin tildes ni espacios**. GitHub propone un nombre automático (`5-recolección-e-ingestión`): **bórralo y escribe el tuyo**.
+
+| Rama | Nombre |
+|---|---|
+| Del equipo | `feature/equipo-<N>-<tema>` → `feature/equipo-1-origen` |
+| De tu tarjeta | `feature/tarjeta-<N>-<tema>` → `feature/tarjeta-2-ingestion` |
+
+---
+
+## A. Tarea general (lo hace **una persona** del equipo)
+
+1. Abre el **Project** (pestaña **Projects** del repo). En la columna **Todo** pulsa **+ Add item**, luego el **+** de la barra inferior → **Create new issue**.
+
+   <img src="docs/img/01-project-crear-issue.png" width="700" alt="Add item y Create new issue en el Project">
+
+2. Elige la plantilla **🗂️ Tarea de equipo**. Título: `Equipo 1 · Origen y Captura`.
+
+   <img src="docs/img/02-project-plantilla.png" width="600" alt="Elegir la plantilla Tarea de equipo">
+
+3. Pulsa el issue en el tablero para abrirlo en el panel lateral. En **Development → Create a branch**, deja **Branch source** en `main` y escribe el nombre `feature/equipo-1-origen` → **Create branch**. Avisad a todo el equipo del nombre.
+
+## B. Subtarea (lo hace **cada persona** con su tarjeta)
+
+### 1. Crea tu subtarea
+
+1. En el **Project**, abre la tarea general de tu equipo y pulsa **Create sub-issue → 🃏 Mi tarjeta**.
+
+   <img src="docs/img/03-crear-sub-issue.png" width="700" alt="Create sub-issue desde la tarea general">
+
+2. Título: el tema de tu tarjeta. Rellena el número de tarjeta, pulsa **Assignee** para asignártela y **Create**.
+
+   <img src="docs/img/04-sub-issue-formulario.png" width="700" alt="Formulario de la subtarea">
+
+3. Abre tu subtarea en el tablero y, en el panel derecho, cambia **Status** a **In Progress**.
+
+   <img src="docs/img/05-status-in-progress.png" width="700" alt="Cambiar Status a In Progress">
+
+### 2. Crea tu rama a partir de la rama del equipo
+
+En el panel de tu subtarea: **Development → Create a branch**. **En este orden**:
+
+1. **Branch source** → elige **la rama del equipo** (⚠️ no `main`).
+2. **Branch name** → `feature/tarjeta-<N>-<tema>`.
+3. Deja **Checkout locally** y pulsa **Create branch**.
+
+<img src="docs/img/06-crear-rama.png" width="700" alt="Create a branch desde la rama del equipo">
+
+GitHub te muestra los comandos para traerte la rama:
 
 ```bash
 git clone https://github.com/<organizacion-del-bootcamp>/hello_world_from_PR.git
 cd hello_world_from_PR
-```
-
-### 2. Crea tu issue
-
-1. Abre la pestaña **Projects** del repo y comprueba que nadie ha reservado ya tu tarjeta.
-2. **Issues → New issue → 🃏 Mi tarjeta**. Título: `Tarjeta: Equipo 1 · Recolección e ingestión`.
-3. En el panel derecho del issue:
-   - **Assignees** → asígnatelo.
-   - **Projects** → el issue ya aparece en el tablero. Pon tu **Equipo** y cambia **Status** a **In Progress**.
-
-### 3. Crea la rama desde el issue
-
-En el issue, panel derecho: **Development → Create a branch → Checkout locally**. GitHub te da los comandos:
-
-```bash
 git fetch origin
-git checkout <nombre-de-la-rama>
+git checkout feature/tarjeta-2-ingestion
 ```
 
-### 4. Escribe tu tarjeta
+### 3. Escribe tu tarjeta
 
 Edita **solo** tu bloque `TARJETA N` en el HTML de tu equipo: copia el `<h3>` y el `<p>` de la sección **Tarjetas**.
 Abre `index.html` en el navegador para comprobar cómo queda.
 
-### 5. Commit y push
+### 4. Commit y push
 
 ```bash
 git add .
 git commit -m "Añade tarjeta Recolección e ingestión"
-git push -u origin <nombre-de-la-rama>
+git push -u origin feature/tarjeta-2-ingestion
 ```
 
-### 6. Abre el Pull Request
+### 5. PR a la rama del equipo
 
-1. GitHub muestra el botón **Compare & pull request**. Base: `main`.
-2. En la descripción escribe `Closes #<número-de-tu-issue>`, así el issue se cierra solo al hacer merge.
-3. En **Reviewers** pide revisión a un compañero/a de tu equipo.
+1. Pulsa **Compare & pull request**. ⚠️ GitHub pone **base: main** por defecto: cámbiala a **la rama del equipo**.
 
-### 7. Review y merge
+   <img src="docs/img/07-pr-base.png" width="600" alt="Cambiar la base del PR">
 
-- **Quien revisa**: abre **Files changed**, deja al menos un comentario y pulsa **Review changes → Approve**.
-- **El/la instructor/a** hace el merge. El issue se cierra y la tarjeta pasa a **Done** en el Project.
+   Tiene que quedar así:
+
+   <img src="docs/img/08-pr-base-ok.png" width="700" alt="Base del PR en la rama del equipo">
+
+2. Pide revisión a un compañero/a en **Reviewers**. Quien revisa abre **Files changed**, pulsa **Submit review**, elige **Approve** y después hace el **merge**.
+
+   <img src="docs/img/09-review.png" width="700" alt="Submit review y Approve">
+
+   > ℹ️ En la captura **Approve** sale desactivado porque GitHub no deja aprobar tu propio PR. Cuando lo abra un compañero/a, le aparecerá activo.
+
+3. Cierra tu subtarea con **Close issue** (GitHub solo cierra issues solos cuando el merge es a `main`). Pasa a **Done** en el Project.
+
+## C. PR del equipo a `main` (cuando **todas** las subtareas están cerradas)
+
+1. Comprobad que todo funciona en la rama del equipo:
+
+   ```bash
+   git checkout feature/equipo-1-origen
+   git pull
+   ```
+
+   Abrid `index.html` y revisad vuestra sección.
+2. Abrid un PR de **la rama del equipo → `main`** con `Closes #<número-de-la-tarea-general>` en la descripción.
+3. El/la instructor/a revisa y hace el merge. La tarea general se cierra y pasa a **Done**.
 
 ---
 
 ## 🆘 Problemas comunes
 
 - **`git push` rechazado**: seguramente estás en `main`. Haz `git checkout <tu-rama>`.
+- **El PR muestra cambios que no son tuyos**: tu rama salió de `main` o el PR apunta a `main`. Revisa la **base** del PR.
 - **El PR tiene conflictos**: has editado fuera de tu bloque `TARJETA N`. Deshaz esos cambios.
-- **No aparece la plantilla**: estás en otro repo. Revisa que la URL sea la de la organización del bootcamp.
-
-## ⭐ Extra para quien acabe antes: provocar un conflicto
-
-Dos personas cambian el mismo `<h2>` de su página en ramas distintas y abren PR. Al hacer merge del primero,
-el segundo tendrá conflicto. Resolvedlo:
-
-```bash
-git checkout <tu-rama>
-git pull origin main
-```
-
-Editad el archivo, dejad la versión buena (borrad `<<<<<<<`, `=======`, `>>>>>>>`), y haced commit y push.
-
----
-
-## 👩‍🏫 Preparación (solo instructor/a)
-
-Este repo es la plantilla original: **no se trabaja aquí**. Para cada bootcamp:
-
-1. Haz fork a la organización del bootcamp y desvincúlalo del original (**Settings → Danger Zone → Leave fork network**).
-2. En el fork: **Settings → General → Features**, activa **Issues** y **Projects**. Añade a los alumnos con permiso **Write**.
-3. Copia la plantilla del Project a la organización y enlázala al repo:
-
-   ```bash
-   gh project copy 56 --source-owner Factoria-F5-madrid --target-owner <org> --title "Pilares del Dato"
-   gh project link <numero-nuevo> --owner <org> --repo <org>/hello_world_from_PR
-   ```
-
-   Ya trae el tablero, el campo **Equipo**, la vista **Mis tarjetas** y los workflows de **Todo** y **Done** automáticos.
-   Si no tienes `gh`, desde la organización: **Projects → New project → Templates** (solo dentro de Factoria-F5-madrid).
-4. En el Project copiado: **⋯ → Workflows → Auto-add to project**, actívalo con el filtro `is:issue` para este repo (GitHub no copia este workflow).
-5. En el Project: **⋯ → Settings → Manage access**, da permiso **Write** a los alumnos para que puedan mover tarjetas.
-6. Opcional: protege `main` (**Settings → Branches**) exigiendo 1 aprobación antes del merge.
+- **Aviso _"The head ref may contain hidden characters"_**: tu rama tiene tildes. Usa nombres `feature/...` sin tildes.
+- **No aparecen las plantillas de issue**: estás en otro repo. Revisa que la URL sea la de la organización del bootcamp.

@@ -1,0 +1,19 @@
+name: "🗂️ Tarea de equipo"
+description: "Issue general del equipo. De aquí sale la rama del equipo."
+title: "Equipo "
+body:
+  - type: markdown
+    attributes:
+      value: "🏷️ Al crear la rama del equipo, llámala `feature/equipo-<N>-<tema>` (sin tildes)."
+  - type: dropdown
+    id: equipo
+    attributes:
+      label: "Equipo"
+      options:
+        - "1 · Origen y Captura"
+        - "2 · Limpieza y Transformación"
+        - "3 · Análisis y Modelado"
+        - "4 · Despliegue y Monitorización"
+        - "5 · Impacto y Dirección Estratégica"
+    validations:
+      required: true
