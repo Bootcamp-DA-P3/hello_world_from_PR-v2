@@ -1,0 +1,11 @@
+name: "🃏 Mi tarjeta"
+description: "Subtarea: la tarjeta que vas a escribir. Créala como sub-issue de la tarea de tu equipo."
+title: ""
+body:
+  - type: input
+    id: tarjeta
+    attributes:
+      label: "Número de tarjeta"
+      placeholder: "TARJETA 1"
+    validations:
+      required: true
