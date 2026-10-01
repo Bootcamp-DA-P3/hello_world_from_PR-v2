@@ -148,15 +148,18 @@ gitGraph
 
 ## A. Tarea general (lo hace **una persona** del equipo)
 
-1. **Issues → New issue → 🗂️ Tarea de equipo**. Título: `Equipo 1 · Origen y Captura`.
-2. En el panel derecho del issue: **Development → Create a branch → Create branch** (sale de `main`).
+Los issues se crean **desde el Project**, no desde la pestaña Issues:
+
+1. Abre el **Project** del bootcamp (pestaña **Projects** del repo) y, en la columna **Todo**, pulsa **+ Add item → + → Create new issue**.
+2. Elige el repo `hello_world_from_PR` y la plantilla **🗂️ Tarea de equipo**. Título: `Equipo 1 · Origen y Captura`.
+3. Abre el issue (clic en su tarjeta del tablero → título del issue) y, en el panel derecho: **Development → Create a branch → Create branch** (sale de `main`).
    Esta es la **rama del equipo**: avisad a todos de su nombre.
 
 ## B. Subtarea (lo hace **cada persona** con su tarjeta)
 
 ### 1. Crea tu subtarea
 
-1. Abre el issue de tu equipo y pulsa **Create sub-issue → 🃏 Mi tarjeta**. Título: el tema de tu tarjeta, ej. `Fuentes estructuradas y no estructuradas`.
+1. En el **Project**, abre la tarea general de tu equipo y pulsa **Create sub-issue → 🃏 Mi tarjeta**. Título: el tema de tu tarjeta, ej. `Fuentes estructuradas y no estructuradas`.
 2. En el panel derecho: **Assignees** → asígnatelo y, en **Projects**, cambia **Status** a **In Progress**.
 
 ### 2. Crea tu rama a partir de la rama del equipo
