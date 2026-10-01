@@ -1,166 +1,109 @@
-# 🌐 Proyecto Colaborativo — Uso y Tratamiento de la información (Datos)
+# 🌐 Los 5 Pilares del Ciclo de Vida del Dato
 
-### Bootcamp Desarrollo Web — Actividad de Colaboración en GitHub
+Práctica de colaboración en GitHub: cada alumno/a escribe **una tarjeta** de la web siguiendo el ciclo completo
+**issue → rama → commit → pull request → review → merge**, organizado en el **Project** del repo.
 
----
-
-## 🧠 Objetivo General
-
-Desarrollar una **página web estática (HTML + CSS)** en equipos, aplicando buenas prácticas de **colaboración con GitHub**.  
-El sitio abordará los **5 Pilares del Ciclo de Vida del Dato**, cada uno desarrollado por un equipo diferente.
+Duración aproximada: 45–60 min.
 
 ---
 
-## 🚀 Objetivos de Aprendizaje
+## 🃏 Tarjetas disponibles
 
-- Utilizar **HTML y CSS** para crear estructuras y estilos coherentes
-- Trabajar en **ramas (branches)** e implementar cambios mediante **pull requests (PR)**
-- Organizar tareas en **GitHub Projects** e issues asignadas por equipo
-- Comprender y comunicar los fundamentos del **Ciclo de Vida del Dato** en el contexto de Data Science
+Cada equipo tiene una página con 4 tarjetas ya preparadas. Cada persona elige **una tarjeta** (si sois más, trabajad en pareja).
 
----
+| Equipo | Archivo | Tarjetas |
+|---|---|---|
+| 1 · Origen y Captura | `data-origin/data-origin.html` | 1 Fuentes estructuradas y no estructuradas · 2 Recolección e ingestión · 3 Data Governance · 4 Metadatos y procedencia |
+| 2 · Limpieza y Transformación | `data-cleaning/data-cleaning.html` | 1 Data Wrangling y calidad · 2 Valores nulos y outliers · 3 ETL/ELT y pipelines · 4 Feature Engineering |
+| 3 · Análisis y Modelado | `data-analysis/data-analysis.html` | 1 Estadística descriptiva · 2 Machine Learning · 3 Experimentación y validación · 4 Segmentación y patrones |
+| 4 · Despliegue y Monitorización | `deployment/deployment.html` | 1 MLOps · 2 Dashboards y reporting · 3 Recomendación en tiempo real · 4 Monitorización y mantenimiento |
+| 5 · Impacto y Dirección Estratégica | `strategic-direction/strategic-direction.html` | 1 Storytelling con datos · 2 ROI e impacto · 3 Retroalimentación y mejora · 4 Ética, privacidad y gobierno |
 
-## 🏗️ Estructura del Proyecto
-
-```
-/
-├── .github/                     # Configuración de GitHub
-├── assets/                      # Recursos compartidos como imágenes
-│   ├── data-analysis/
-│   ├── data-cleaning/
-│   ├── data-origin/
-│   ├── deployment/
-│   └── strategic-direction/
-├── examples/                    # Ejemplos de referencia
-│   ├── alanTuring.png
-│   ├── aristoteles.png
-│   ├── georgeBoole.png
-│   ├── examples.html
-│   └── examples.css
-├── data-analysis/               # Equipo 3: Análisis & Modelado
-│   ├── data-analysis.html
-│   └── data-analysis.css
-├── data-cleaning/               # Equipo 2: Limpieza & Transformación
-│   ├── data-cleaning.html
-│   └── data-cleaning.css
-├── data-origin/                 # Equipo 1: Origen & Captura de Datos
-│   ├── data-origin.html
-│   └── data-origin.css
-├── deployment/                  # Equipo 4: Despliegue & Monitorización
-│   ├── deployment.html
-│   └── deployment.css
-├── strategic-direction/         # Equipo 5: Impacto & Dirección Estratégica
-│   ├── strategic-direction.html
-│   └── strategic-direction.css
-├── globals.css                  # Estilos base compartidos
-├── index.html                   # Página principal
-├── script.js                    
-└── README.md                   
-```
+Mira `examples/examples.html` para ver cómo queda una tarjeta terminada.
 
 ---
 
-## 🧩 Temas Asignados por Equipo
+## 🧭 Pasos
 
-### **1️⃣ Origen & Captura de Datos**
-- Fuentes estructuradas (BBDD, APIs, ERP) y no estructuradas (logs, sensores, redes sociales)
-- Estrategias de recolección e ingestión
-- Data Governance
-- Metadatos y procedencia
-
-### **2️⃣ Limpieza & Transformación**
-- Data Wrangling y calidad de datos
-- Manejo de valores nulos y outliers
-- ETL/ELT y pipelines
-- Feature Engineering
-
-### **3️⃣ Análisis & Modelado**
-- Estadística descriptiva y visualización
-- Machine Learning (supervisado y no supervisado)
-- Experimentación y validación
-- Segmentación y patrones ocultos
-
-### **4️⃣ Despliegue & Monitorización**
-- Puesta en producción de modelos (MLOps)
-- Dashboards y reporting automatizado
-- Sistemas de recomendación en tiempo real
-- Monitorización y mantenimiento
-
-### **5️⃣ Impacto & Dirección Estratégica**
-- Storytelling con datos para la toma de decisiones
-- ROI e impacto en negocio
-- Retroalimentación y mejora continua
-- Ética, privacidad y gobierno de datos
-
----
-
-## 🧭 Instrucciones de Trabajo en GitHub
-
-### 1️⃣ Clonar el repositorio base
+### 1. Clona el repo
 
 ```bash
-git clone https://github.com/[nombre-organizacion]/data-journey.git
-cd data-journey
+git clone https://github.com/<organizacion-del-bootcamp>/hello_world_from_PR.git
+cd hello_world_from_PR
 ```
 
-### 2️⃣ Crear una nueva rama por equipo
+### 2. Crea tu issue
 
-Esto lo harán creando la rama a partir de los issues que se creen
+1. Abre la pestaña **Projects** del repo y comprueba que nadie ha reservado ya tu tarjeta.
+2. **Issues → New issue → 🃏 Mi tarjeta**. Título: `Tarjeta: Equipo 1 · Recolección e ingestión`.
+3. Asígnatelo (**Assignees → assign yourself**).
+4. El issue aparece solo en el Project, en **Todo**. Muévelo a **In Progress**.
 
-### 3️⃣ Crear o editar su carpeta asignada
+### 3. Crea la rama desde el issue
 
-- Añadir su HTML y CSS dentro de la carpeta correspondiente
-- Mantener coherencia visual con los estilos globales (`globals.css`)
+En el issue, panel derecho: **Development → Create a branch → Checkout locally**. GitHub te da los comandos:
 
-### 4️⃣ Confirmar y subir cambios
+```bash
+git fetch origin
+git checkout <nombre-de-la-rama>
+```
+
+### 4. Escribe tu tarjeta
+
+Edita **solo** tu bloque `TARJETA N` en el HTML de tu equipo: cambia el `<h3>` y el `<p>`.
+Abre `index.html` en el navegador para comprobar cómo queda.
+
+### 5. Commit y push
 
 ```bash
 git add .
-git commit -m "Equipo 2: sección Limpieza & Transformación"
-git push origin feature/limpieza-transformacion
+git commit -m "Añade tarjeta Recolección e ingestión"
+git push -u origin <nombre-de-la-rama>
 ```
 
-### 5️⃣ Crear un Pull Request
+### 6. Abre el Pull Request
 
-Desde GitHub:
-1. Abrir un PR desde su rama hacia `main`
-2. Asignar como revisores a los instructores
-3. Esperar aprobación antes de fusionar
+1. GitHub muestra el botón **Compare & pull request**. Base: `main`.
+2. En la descripción escribe `Closes #<número-de-tu-issue>`, así el issue se cierra solo al hacer merge.
+3. En **Reviewers** pide revisión a un compañero/a de tu equipo.
 
----
+### 7. Review y merge
 
-## 🗂️ GitHub Project & Issues
-
-- Cada equipo tendrá **issues asignadas** con las tareas específicas (diseño, contenido, revisión, media, etc.)
-- Se usará **GitHub Projects** para seguir el progreso (To Do / In Progress / Done)
-- Cada issue debe asociarse a una rama y un PR
+- **Quien revisa**: abre **Files changed**, deja al menos un comentario y pulsa **Review changes → Approve**.
+- **El/la instructor/a** hace el merge. El issue se cierra y la tarjeta pasa a **Done** en el Project.
 
 ---
 
-## 🧑‍💻 Reglas de Colaboración
+## 🆘 Problemas comunes
 
-- ❌ No editar archivos fuera de la carpeta asignada sin autorización
-- ✅ Mantener un estilo visual coherente (tipografía, paleta y estructura)
-- ⏰ Respetar los tiempos de entrega y revisiones de PR
-- 📝 Documentar cambios relevantes en los commits
+- **`git push` rechazado**: seguramente estás en `main`. Haz `git checkout <tu-rama>`.
+- **El PR tiene conflictos**: has editado fuera de tu bloque `TARJETA N`. Deshaz esos cambios.
+- **No aparece la plantilla**: estás en otro repo. Revisa que la URL sea la de la organización del bootcamp.
+
+## ⭐ Extra para quien acabe antes: provocar un conflicto
+
+Dos personas cambian el mismo `<h2>` de su página en ramas distintas y abren PR. Al hacer merge del primero,
+el segundo tendrá conflicto. Resolvedlo:
+
+```bash
+git checkout <tu-rama>
+git pull origin main
+```
+
+Editad el archivo, dejad la versión buena (borrad `<<<<<<<`, `=======`, `>>>>>>>`), y haced commit y push.
 
 ---
 
-## 🎯 Entregable Final
+## 👩‍🏫 Preparación (solo instructor/a)
 
-Una web estática navegable con un acordeón principal (`index.html`) que mostrará las secciones creadas por cada equipo.
+Este repo es la plantilla original: **no se trabaja aquí**. Para cada bootcamp:
 
-**El sitio será evaluado por:**
-- Estructura y organización del código
-- Uso correcto de Git y GitHub (ramas, PR, issues)
-- Estética visual y coherencia entre secciones
-- Claridad y precisión del contenido técnico
-
----
-
-## 📚 Recursos Adicionales
-
-- [Documentación de Git](https://git-scm.com/doc)
-- [GitHub Guides](https://guides.github.com/)
-- [MDN Web Docs - HTML](https://developer.mozilla.org/es/docs/Web/HTML)
-- [MDN Web Docs - CSS](https://developer.mozilla.org/es/docs/Web/CSS)
+1. Haz fork a la organización del bootcamp y desvincúlalo del original (**Settings → Danger Zone → Leave fork network**).
+2. En el fork: **Settings → General → Features**, activa **Issues** y **Projects**. Añade a los alumnos con permiso **Write**.
+3. En la organización: **Projects → New project → Board**. Nómbralo, por ejemplo, `Pilares del Dato`.
+4. En el repo: pestaña **Projects → Link a project** y elige el tablero.
+5. En el Project: **⋯ → Workflows**:
+   - Activa **Auto-add to project** con el filtro `is:issue,pr` para este repo.
+   - Comprueba que **Item closed** y **Pull request merged** mueven a **Done** (vienen activados).
+6. En el Project: **⋯ → Settings → Manage access**, da permiso **Write** a los alumnos para que puedan mover tarjetas.
+7. Opcional: protege `main` (**Settings → Branches**) exigiendo 1 aprobación antes del merge.
