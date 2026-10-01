@@ -2,6 +2,9 @@ name: "🗂️ Tarea de equipo"
 description: "Issue general del equipo. De aquí sale la rama del equipo."
 title: "Equipo "
 body:
+  - type: markdown
+    attributes:
+      value: "🏷️ Al crear la rama del equipo, llámala `feature/equipo-<N>-<tema>` (sin tildes)."
   - type: dropdown
     id: equipo
     attributes:

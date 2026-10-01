@@ -1,7 +1,9 @@
 name: "🃏 Mi tarjeta"
 description: "Subtarea: la tarjeta que vas a escribir. Créala como sub-issue de la tarea de tu equipo."
-title: ""
 body:
+  - type: markdown
+    attributes:
+      value: "🏷️ Al crear tu rama, sale de la rama del equipo y se llama `feature/tarjeta-<N>-<tema>` (sin tildes)."
   - type: input
     id: tarjeta
     attributes:
