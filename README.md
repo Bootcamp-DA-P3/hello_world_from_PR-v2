@@ -167,7 +167,7 @@ Todas las ramas empiezan por `feature/`, en minúsculas y **sin tildes ni espaci
    <img src="docs/img/02-project-plantilla.png" width="600" alt="Elegir la plantilla Tarea de equipo">
 
 3. Pulsa el issue en el tablero para abrirlo en el panel lateral. En **Development → Create a branch**, **en este orden**:
-   1. **Repository destination** → elige el repo `hello_world_from_PR`.
+   1. **Repository destination** → elige el repo `Bootcamp-DA-P3/hello_world_from_PR-v2`.
    2. **Branch source** → deja `main`.
    3. **Branch name** → `feature/equipo-1-origen` → **Create branch**.
 
@@ -193,7 +193,7 @@ Todas las ramas empiezan por `feature/`, en minúsculas y **sin tildes ni espaci
 
 En el panel de tu subtarea: **Development → Create a branch**. **En este orden**:
 
-1. **Repository destination** → elige el repo `hello_world_from_PR`.
+1. **Repository destination** → elige el repo `Bootcamp-DA-P3/hello_world_from_PR-v2`.
 2. **Branch source** → elige **la rama del equipo** (⚠️ no `main`).
 3. **Branch name** → `feature/tarjeta-<N>-<tema>`. Escríbelo al final: si cambias el repo después, el nombre se borra.
 4. Deja **Checkout locally** y pulsa **Create branch**.
@@ -203,8 +203,8 @@ En el panel de tu subtarea: **Development → Create a branch**. **En este orden
 GitHub te muestra los comandos para traerte la rama:
 
 ```bash
-git clone https://github.com/<organizacion-del-bootcamp>/hello_world_from_PR.git
-cd hello_world_from_PR
+git clone https://github.com/Bootcamp-DA-P3/hello_world_from_PR-v2.git
+cd hello_world_from_PR-v2
 git fetch origin
 git checkout feature/tarjeta-2-ingestion
 ```
